@@ -13,15 +13,31 @@ eureka:
 spring:
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
-      routes:
-        - id: micro-user
-          uri: lb://micro-user
-          predicates:
-            - Path=/api/v0/users/**
-        - id: micro-package
-          uri: lb://micro-package
-          predicates:
-            - Path=/api/v0/packages/**
+      server:
+        webflux:
+          globalcors:
+            cors-configurations:
+              '[/**]':
+                allowedOrigins:
+                  - "http://localhost:5173"
+                allowedMethods:
+                  - GET
+                  - POST
+                  - PUT
+                  - DELETE
+                  - OPTIONS
+                allowedHeaders:
+                  - "*"
+                allowCredentials: true    
+        discovery:
+          locator:
+            enabled: true
+        routes:
+          - id: micro-user
+            uri: lb://micro-user
+            predicates:
+              - Path=/api/v0/users/**
+          - id: micro-package
+            uri: lb://micro-package
+            predicates:
+              - Path=/api/v0/packages/**
