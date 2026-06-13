@@ -46,3 +46,7 @@ spring:
               uri: lb://micro-package
               predicates:
                 - Path=/api/v0/packages/**
+            - id: micro-packagefilter
+              uri: lb://micro-packagefilter
+              predicates:
+                - Path=/api/v0/packagefilter/**
