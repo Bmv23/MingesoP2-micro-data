@@ -20,8 +20,8 @@ spring:
         - id: micro-user
           uri: lb://micro-user
           predicates:
-            - Path=/student/**
+            - Path=/api/v0/users/**
         - id: micro-package
           uri: lb://micro-package
           predicates:
-            - Path=/book/**
+            - Path=/api/v0/packages/**
