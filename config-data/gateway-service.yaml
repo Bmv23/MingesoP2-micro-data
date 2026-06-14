@@ -42,11 +42,11 @@ spring:
               uri: lb://micro-user
               predicates:
                 - Path=/api/v0/users/**
-            - id: micro-package
-              uri: lb://micro-package
-              predicates:
-                - Path=/api/v0/packages/**
             - id: micro-packagefilter
               uri: lb://micro-packagefilter
               predicates:
-                - Path=/api/v0/packagefilter/**
+                - Path=/api/v0/packages/destination,/api/v0/packages/status,/api/v0/packages/maxPrice,/api/v0/packages/filter
+            - id: micro-package
+              uri: lb://micro-package
+              predicates:
+                - Path=/api/v0/packages/**                
