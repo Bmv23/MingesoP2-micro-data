@@ -49,4 +49,8 @@ spring:
             - id: micro-package
               uri: lb://micro-package
               predicates:
-                - Path=/api/v0/packages/**                
+                - Path=/api/v0/packages/**   
+            - id: micro-reservation
+              uri: lb://micro-reservation
+              predicates:
+                - Path=/api/v0/reservations/**             
