@@ -53,4 +53,8 @@ spring:
             - id: micro-reservation
               uri: lb://micro-reservation
               predicates:
-                - Path=/api/v0/reservations/**             
+                - Path=/api/v0/reservations/**
+            - id: micro-payment
+              uri: lb://micro-payment
+              predicates:
+                - Path=/api/v0/payments/**          
