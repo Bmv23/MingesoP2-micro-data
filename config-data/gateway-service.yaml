@@ -65,4 +65,8 @@ spring:
             - id: micro-reports
               uri: lb://micro-reports
               predicates:
-                - Path=/api/v0/reports/**                           
+                - Path=/api/v0/reports/**  
+            - id: micro-reservation-discounts
+              uri: lb://micro-reservation
+              predicates:
+                - Path=/api/v0/discounts/**                             
