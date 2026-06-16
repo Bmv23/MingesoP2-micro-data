@@ -61,4 +61,8 @@ spring:
             - id: micro-reservationtracking
               uri: lb://micro-reservationtracking
               predicates:
-                - Path=/api/v0/reservationtracking/**            
+                - Path=/api/v0/reservationtracking/** 
+            - id: micro-reports
+              uri: lb://micro-reports
+              predicates:
+                - Path=/api/v0/reports/**                           
